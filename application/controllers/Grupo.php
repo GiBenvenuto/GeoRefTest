@@ -49,24 +49,26 @@ class Grupo extends CI_Controller {
 		if($this->Gmodel->getExistente($dados['Nome'])){
 
 			$mensagem = "Esse grupo já existe !";
-			$this->session->set_flashdata('erro', $mensagem);
+
+			$this->session->set_flashdata('msg', $mensagem);
+			redirect(base_url('Grupo/sugerir_grupos'));
+
 		}else{
 			if($this->Gmodel->inserirGrupo($dados)){
 				$nome = $dados['Nome'];
+				
 				$this->sugerir_atributos($nome);
-				$mensagem = $nome."Grupo inserido com sucesso!";
-				$this->session->set_flashdata('sucesso', $mensagem);
 			}
 			else{ 
 				$mensagem = "Houve um erro ao criar o grupo!";
-				$this->session->set_flashdata('erro', $mensagem);
+				$this->session->set_flashdata('msg', $mensagem);
 				redirect(base_url('Grupo/sugerir_grupos'));
 
-			}
 
+			}
+			
 		}
 
-		
 
 
 	}
