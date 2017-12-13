@@ -10,7 +10,6 @@
 				}
 
 				?>
-
 			</select>
 			<br>
 			<button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Adicionar</button>		
