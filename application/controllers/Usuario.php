@@ -84,8 +84,18 @@ public function cadastrar(){
 			if ($result[0]->Grau_Permissao == 0){
 				redirect('Home/area_usuario');
 			}
+			else{
+				redirect('Home/area_moderador');
+			}
 			
 			}
+	}
+
+	function sair(){
+		if ($this->session->has_userdata('usuario')){
+			$this->session->unset_userdata('usuario');
+			redirect('Home/index');
+		}
 	}
 
 	function area(){

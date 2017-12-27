@@ -27,6 +27,15 @@ class Home extends CI_Controller {
 		$this->load->view('html-footer');
 	}
 
+	public function area_moderador(){
+		$this->load->view('html-header');
+		$this->load->view('Usuario/area_moderador');
+		$this->load->view('home');
+		$this->load->view('mapa');
+		$this->load->view('footer');
+		$this->load->view('html-footer');
+	}
+
 	public function cadastrar(){
 		$this->load->view('html-header');
 		$this->load->view('menu');
